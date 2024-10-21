@@ -1,4 +1,4 @@
-# A Blog Starter App
+# Basic Blog
 
 This is a trivial blog app, started with Vite.
 
