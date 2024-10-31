@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function ArticleEntry({ addArticle , setWriting }) {
+export default function ArticleEntry({ addArticle, setWriting }) {
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
   const [error, setError] = useState(null)
@@ -16,7 +16,7 @@ export default function ArticleEntry({ addArticle , setWriting }) {
   }
 
   function warning() {
-    return !title.trim() && !body.trim() || 
+    return !title.trim() && !body.trim() ||
       confirm("Your blog post is not saved. Do you wish to proceed?")
   }
 
@@ -24,7 +24,7 @@ export default function ArticleEntry({ addArticle , setWriting }) {
     <div>
       <form onSubmit={submit}>
         Title
-        <input value={title} onChange={(e) => setTitle(e.target.value)}/>
+        <input value={title} onChange={(e) => setTitle(e.target.value)} />
         Body
         <textarea
           rows="8"
@@ -35,7 +35,7 @@ export default function ArticleEntry({ addArticle , setWriting }) {
         <div>
           <button className="button" type="submit">Create</button>
           <button
-            className="button" 
+            className="button"
             type="button"
             onClick={() => (warning()) ? setWriting(false) : ""}
           >Cancel</button>

@@ -1,5 +1,5 @@
 function formatFirestoreTimestamp(timestamp) {
-  const date = timestamp.toDate(); 
+  const date = timestamp.toDate();
   return date.toLocaleString("en-US", {
     year: "numeric",
     month: "long",
@@ -28,8 +28,8 @@ export default function Article({ article }) {
           <br />
           <p>
             Feel free to explore my blog by checking out my posts by
-            authenticating your Google account. I have some of the 
-            best opinions in the world when it comes to funny puzzle 
+            authenticating your Google account. I have some of the
+            best opinions in the world when it comes to funny puzzle
             game reviews.
           </p>
         </section>

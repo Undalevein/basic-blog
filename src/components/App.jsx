@@ -38,9 +38,9 @@ export default function App() {
         {!user ? <SignIn /> : <SignOut />}
       </header>
 
-      {!writing ? (
-        <Nav articles={articles} setArticle={setArticle}/>
-      ): <br/>}
+      {user && !writing ? (
+        <Nav articles={articles} setArticle={setArticle} />
+      ) : <br />}
 
       {user && writing ? (
         <ArticleEntry addArticle={addArticle} setWriting={setWriting} />

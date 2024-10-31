@@ -7,7 +7,7 @@ export default function Nav({ articles, setArticle }) {
           <p key={a.id} onClick={() => setArticle(a)}>
             {a.title}
           </p>
-          ))}
+        ))}
     </nav>
   )
 }
