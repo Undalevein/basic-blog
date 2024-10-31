@@ -6,7 +6,11 @@ Authors: Wesley Ng
 
 ## Accessing Web App
 
-To access the Web App, here is the link:
+To access the Web App, here are the links:
+
+**Project Console**: https://console.firebase.google.com/project/simple-blog-18abd/overview
+
+**Hosting URL**: https://simple-blog-18abd.web.app
 
 ## How to Use
 
