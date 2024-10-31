@@ -27,20 +27,23 @@ export default function App() {
     })
   }
 
+
   return (
     <div className="App">
       <header>
-        Undalevein's Blog
-        {user && <button class="button" onClick={() => setWriting(true)}>New Article</button>}
+        <button id="logo" className="button is-ghost" onClick={() => setArticle(false)}>
+          Undalevein's Blog
+        </button>
+        {user && <button id="createArticle" className="button" onClick={() => setWriting(true)}>New Article</button>}
         {!user ? <SignIn /> : <SignOut />}
       </header>
 
-      {!user ? "" : <Nav articles={articles} setArticle={setArticle} />}
+      {!writing ? (
+        <Nav articles={articles} setArticle={setArticle}/>
+      ): <br/>}
 
-      {!user ? (
-        ""
-      ) : writing ? (
-        <ArticleEntry addArticle={addArticle} />
+      {user && writing ? (
+        <ArticleEntry addArticle={addArticle} setWriting={setWriting} />
       ) : (
         <Article article={article} />
       )}

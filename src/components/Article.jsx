@@ -1,8 +1,20 @@
+function formatFirestoreTimestamp(timestamp) {
+  const date = timestamp.toDate(); 
+  return date.toLocaleString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+}
+
 export default function Article({ article }) {
   return (
     <article>
       {!article ? (
-        <section class="blogcontent">
+        <section className="blogcontent">
           <h1>Welcome to my blog!</h1>
           <p>
             Hello! I am Undalevein and I am a puzzle gamer and
@@ -15,15 +27,16 @@ export default function Article({ article }) {
           </p>
           <br />
           <p>
-            Feel free to explore my blog by checking out my posts on
-            the left. I have some of the best opinions in the world
-            when it comes to funny puzzle game reviews.
+            Feel free to explore my blog by checking out my posts by
+            authenticating your Google account. I have some of the 
+            best opinions in the world when it comes to funny puzzle 
+            game reviews.
           </p>
         </section>
       ) : (
-        <section class="blogcontent">
+        <section className="blogcontent">
           <h1>{article.title}</h1>
-          <p className="date">{`Posted: ${article.date}`}</p>
+          <p className="date">{`Posted: ${formatFirestoreTimestamp(article.date)}`}</p>
           <p className="body">{article.body}</p>
         </section>
       )}

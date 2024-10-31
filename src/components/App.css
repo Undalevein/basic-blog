@@ -54,7 +54,25 @@ header {
   grid-column: 1 / span 2;
   padding: 10px 1vh;
   font-family: 'Jersey 10';
-  font-size: 4vh;
+  font-size: 1vw;
+}
+
+#logo {
+  font-size: 4vw;
+  size: 4vw;
+  padding: 0;
+}
+
+#createArticle {
+  font-size: 18px;
+}
+
+#signin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1vw;
+  font-size: 2vw;
 }
 
 form {
@@ -65,6 +83,7 @@ form {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
   font-weight: bold;
   font-size: 20px;
+  color: white;
   background-color: rgb(109, 80, 114);
   border-style: inset;
   border-radius: 20px;
@@ -82,10 +101,15 @@ article {
   padding: 10px;
 }
 
+article {
+  width: 100%;
+}
+
 nav {
   background-image: linear-gradient(black, rgb(18, 18, 82));
   background-repeat: no-repeat;
   background-attachment: fixed;
+  white-space: break-spaces;
 }
 
 nav p:hover {

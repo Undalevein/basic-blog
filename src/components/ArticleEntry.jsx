@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function ArticleEntry({ addArticle }) {
+export default function ArticleEntry({ addArticle , setWriting }) {
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
   const [error, setError] = useState(null)
@@ -15,11 +15,16 @@ export default function ArticleEntry({ addArticle }) {
     }
   }
 
+  function warning() {
+    return !title.trim() && !body.trim() || 
+      confirm("Your blog post is not saved. Do you wish to proceed?")
+  }
+
   return (
     <div>
       <form onSubmit={submit}>
         Title
-        <input value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input value={title} onChange={(e) => setTitle(e.target.value)}/>
         Body
         <textarea
           rows="8"
@@ -27,8 +32,16 @@ export default function ArticleEntry({ addArticle }) {
           onChange={(e) => setBody(e.target.value)}
         ></textarea>
         {error && <p className="error">&#9888; {error}</p>}
-        <button class="button" type="submit">Create</button>
+        <div>
+          <button className="button" type="submit">Create</button>
+          <button
+            className="button" 
+            type="button"
+            onClick={() => (warning()) ? setWriting(false) : ""}
+          >Cancel</button>
+        </div>
       </form>
     </div>
   )
 }
+
